@@ -30,7 +30,7 @@ class TotalThresholdDiscount implements Discount
      */
     public function applyDiscount($total)
     {
-        // if total meets minimum threshold
+        // if the total meets the minimum threshold
         if ($total >= $this->threshold) {
             return $this->discount->applyDiscount($total);
         }
