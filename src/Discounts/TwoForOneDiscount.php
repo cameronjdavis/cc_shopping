@@ -60,9 +60,9 @@ class TwoForOneDiscount implements Discount
      * The two-for-one discount value is equal to the number of items,
      * floored to the next integer down,
      * and multiplied by the unit price.
-     * @param integer $numItems
-     * @param float $unitPrice
-     * @return float
+     * @param integer $numItems Number of items subject to the discount.
+     * @param float $unitPrice Unit price of one item.
+     * @return float Two-for-one discount value.
      */
     public function calculateDiscount($numItems, $unitPrice)
     {
