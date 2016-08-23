@@ -15,4 +15,9 @@ class ShoppingItemTest extends \PHPUnit_Framework_TestCase
     {
         $this->subject = new Subject();
     }
+
+    public function test_SampleTest()
+    {
+        
+    }
 }
