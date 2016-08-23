@@ -3,8 +3,8 @@
 namespace CodeClanShopping\Test;
 
 use CodeClanShopping\Discounts\TwoForOneDiscount as Subject;
-use CodeClanShopping\Discount;
 use CodeClanShopping\Basket;
+use CodeClanShopping\ShoppingItem;
 
 class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
 {
@@ -46,5 +46,73 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         $actual = $this->subject->calculateDiscount($numItems, $unitPrice);
 
         $this->assertSame($expected, $actual);
+    }
+    
+    public function test_applyDiscount_noDiscounts()
+    {
+        $total = 123.4;
+        $this->subject = new Subject([], $this->basket);
+
+        $actual = $this->subject->applyDiscount($total);
+
+        $this->assertSame($total, $actual);
+    }
+    
+    public function test_applyDiscount_discountForItemNotInBasket()
+    {
+        $item1 = new ShoppingItem('PLU 1', '', 1.99);
+        $this->basket->addItem($item1);
+        
+        $total = 123.4;
+        $this->subject = new Subject(['PLU 2'], $this->basket);
+
+        $actual = $this->subject->applyDiscount($total);
+
+        $this->assertSame($total, $actual);
+    }
+    
+    public function test_applyDiscount_onlyOneItemSoNoDiscount()
+    {
+        $item1 = new ShoppingItem('PLU 1', '', 1.99);
+        $this->basket->addItem($item1);
+        
+        $total = 123.4;
+        $this->subject = new Subject(['PLU 1'], $this->basket);
+
+        $actual = $this->subject->applyDiscount($total);
+
+        $this->assertSame($total, $actual);
+    }
+    
+    public function test_applyDiscount_twoItemsSoOneDiscount()
+    {
+        $item1 = new ShoppingItem('PLU 1', '', 1.99);
+        $this->basket->addItem($item1);
+        $this->basket->addItem($item1);
+        
+        $total = 123.4;
+        $this->subject = new Subject(['PLU 1'], $this->basket);
+
+        $actual = $this->subject->applyDiscount($total);
+
+        $this->assertSame($total - 1.99, $actual);
+    }
+    
+    public function test_applyDiscount_differentItemsWachWithDiscount()
+    {
+        $item1 = new ShoppingItem('PLU 1', '', 1.99);
+        $this->basket->addItem($item1);
+        $this->basket->addItem($item1);
+        
+        $item2 = new ShoppingItem('PLU 2', '', 2.76);
+        $this->basket->addItem($item2);
+        $this->basket->addItem($item2);
+        
+        $total = 123.4;
+        $this->subject = new Subject(['PLU 1', 'PLU 2'], $this->basket);
+
+        $actual = $this->subject->applyDiscount($total);
+
+        $this->assertSame($total - 1.99 - 2.76, $actual);
     }
 }

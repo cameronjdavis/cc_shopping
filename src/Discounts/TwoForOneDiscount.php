@@ -37,18 +37,23 @@ class TwoForOneDiscount implements Discount
         // for each PLU that has a two-for-one offer
         foreach ($this->pluList as $plu) {
             $numItems = 0;
+            $unitPrice = null;
 
             // count the items in the basket with this PLU
             foreach ($this->basket->getContents() as $item) {
                 if ($item->getPlu() == $plu) {
                     $numItems++;
+                    $unitPrice = $item->getPrice();
                 }
             }
 
-            // calcaulate the discount for the items that have this PLU
-            $discount = $this->calculateDiscount($numItems, $item->getPrice());
-            // subtract the discount for this PLU
-            $total = $total - $discount;
+            // if enough items for a discount were found
+            if ($numItems > 1) {
+                // calcaulate the discount for the items that have this PLU
+                $discount = $this->calculateDiscount($numItems, $unitPrice);
+                // subtract the discount for this PLU
+                $total = $total - $discount;
+            }
         }
 
         return $total;
