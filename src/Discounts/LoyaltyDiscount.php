@@ -27,7 +27,7 @@ class LoyaltyDiscount implements Discount
     /**
      * If customer is loyal then apply a discount.
      * If customer is not loyal then do not apply discount.
-     * @param float $total Total price befor discounting.
+     * @param float $total Total price before discounting.
      * @return float Optionally discounted total price.
      */
     public function applyDiscount($total)
