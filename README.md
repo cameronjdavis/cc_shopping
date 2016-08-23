@@ -4,7 +4,7 @@
 
 ## Installation
 
-This PHP code runs on PHP version 5.6, 7.0 and hhvm.
+This PHP code runs on PHP versions `5.6`, `7.0` and `hhvm`.
 
 Clone the repo with `git clone git@github.com:cameronjdavis/cc_shopping.git`.
 
