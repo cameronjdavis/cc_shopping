@@ -67,7 +67,7 @@ class RealWorldTest extends \PHPUnit_Framework_TestCase
         // add a two-for-one discount which is first in line
         $twoForOneDiscount = new TwoForOneDiscount(['PLU 3'], $basket);
         $total1 = $twoForOneDiscount->applyDiscount($total);
-        $this->assertEquals(39.30 - 3.12, $total1);
+        $this->assertEquals($total - 3.12, $total1);
         
         // add a total threshold discount for 10% after £20 total
         $percentageDiscount1 = new PercentageDiscount(0.1);
