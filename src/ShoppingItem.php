@@ -6,6 +6,7 @@ class ShoppingItem
 {
     /**
      * Unique retailer ID of the item.
+     * PLU = price look-up code.
      * @var string
      */
     private $plu;
