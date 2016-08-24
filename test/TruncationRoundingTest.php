@@ -2,9 +2,9 @@
 
 namespace CodeClanShopping\Test;
 
-use CodeClanShopping\Rounding as Subject;
+use CodeClanShopping\TruncationRounding as Subject;
 
-class RoundingTest extends \PHPUnit_Framework_TestCase
+class TruncationRoundingTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Subject

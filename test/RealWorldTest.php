@@ -8,7 +8,7 @@ use CodeClanShopping\TotalPriceCalculator;
 use CodeClanShopping\Discounts\PercentageDiscount;
 use CodeClanShopping\Discounts\LoyaltyDiscount;
 use CodeClanShopping\Discounts\TotalThresholdDiscount;
-use CodeClanShopping\Rounding;
+use CodeClanShopping\TruncationRounding;
 use CodeClanShopping\Discounts\TwoForOneDiscount;
 use CodeClanShopping\ShoppingItemSet;
 use CodeClanShopping\Discounts\DiscountList;
@@ -59,7 +59,7 @@ class RealWorldTest extends \PHPUnit_Framework_TestCase
         $discountedTotal = $discountList->applyDiscount($total);
         
         // round (read truncate) the final discounted price
-        $rounding = new Rounding();
+        $rounding = new TruncationRounding();
         $roundedTotal = $rounding->roundPrice($discountedTotal);
         
         $this->assertSame(0.0, $roundedTotal);
@@ -135,7 +135,7 @@ class RealWorldTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($total2 * (1 - 0.02), $total3);
 
         // round (read truncate) the final discounted price
-        $rounding = new Rounding();
+        $rounding = new TruncationRounding();
         $roundedTotal = $rounding->roundPrice($total3);
         $this->assertEquals(31.91, $roundedTotal);
     }

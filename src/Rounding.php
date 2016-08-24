@@ -3,20 +3,15 @@
 namespace CodeClanShopping;
 
 /**
- * The central authority for rounding prices.
- * Prices are rounded (read truncated) in the customer's favour.
+ * A Rounding class defines a method for rounding prices.
  */
-class Rounding
+interface Rounding
 {
 
     /**
-     * Round a price to two decimal places.
-     * It's not true rounding, it's truncating in the customer's favour.
-     * @param float $price
-     * @return float
+     * Round and return a price.
+     * @param float $price To be rounded.
+     * @return float Rounded price.
      */
-    public function roundPrice($price)
-    {
-        return floor($price * 100) / 100;
-    }
+    public function roundPrice($price);
 }
