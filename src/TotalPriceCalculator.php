@@ -19,7 +19,7 @@ class TotalPriceCalculator
     {
         $total = 0.0;
 
-        foreach ($basket->getContents() as $item) {
+        foreach ($basket->getItems() as $item) {
             $total += $item->getPrice();
         }
 

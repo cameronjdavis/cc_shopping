@@ -33,32 +33,32 @@ class RealWorldTest extends \PHPUnit_Framework_TestCase
         $item3 = new ShoppingItem('PLU 3', 'Name 3', 3.12);
         
         // add item 1
-        $basket->addItem($item1);
-        $basket->addItem($item1);
-        $basket->addItem($item1);
-        $basket->addItem($item1);
-        $basket->addItem($item1);
+        $basket->add($item1);
+        $basket->add($item1);
+        $basket->add($item1);
+        $basket->add($item1);
+        $basket->add($item1);
         
-        $basket->addItem($item1);
-        $basket->addItem($item1);
-        $basket->addItem($item1);
-        $basket->addItem($item1);
-        $basket->addItem($item1);
+        $basket->add($item1);
+        $basket->add($item1);
+        $basket->add($item1);
+        $basket->add($item1);
+        $basket->add($item1);
         
         // add item 2
-        $basket->addItem($item2);
-        $basket->addItem($item2);
-        $basket->addItem($item2);
-        $basket->addItem($item2);
-        $basket->addItem($item2);
+        $basket->add($item2);
+        $basket->add($item2);
+        $basket->add($item2);
+        $basket->add($item2);
+        $basket->add($item2);
         
-        $basket->addItem($item2);
-        $basket->addItem($item2);
-        $basket->addItem($item2);
+        $basket->add($item2);
+        $basket->add($item2);
+        $basket->add($item2);
         
         // add item 3, which is two-for-one
-        $basket->addItem($item3);
-        $basket->addItem($item3);
+        $basket->add($item3);
+        $basket->add($item3);
 
         // calculate the total before discounting
         $calculator = new TotalPriceCalculator();

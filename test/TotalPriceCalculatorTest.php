@@ -34,7 +34,7 @@ class TotalPriceCalculatorTest extends \PHPUnit_Framework_TestCase
     public function test_calculateTotal_oneItem()
     {
         $item1 = new ShoppingItem('', '', 1.99);
-        $this->basket->addItem($item1);
+        $this->basket->add($item1);
 
         $actual = $this->subject->calculateTotal($this->basket);
 
@@ -45,8 +45,8 @@ class TotalPriceCalculatorTest extends \PHPUnit_Framework_TestCase
     {
         // arrange
         $item1 = new ShoppingItem('', '', 1.99);
-        $this->basket->addItem($item1);
-        $this->basket->addItem($item1);
+        $this->basket->add($item1);
+        $this->basket->add($item1);
 
         // act
         $actual = $this->subject->calculateTotal($this->basket);

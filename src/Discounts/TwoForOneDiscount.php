@@ -49,7 +49,7 @@ class TwoForOneDiscount implements Discount
             $unitPrice = null;
 
             // count the items in the basket with this PLU
-            foreach ($this->basket->getContents() as $item) {
+            foreach ($this->basket->getItems() as $item) {
                 if ($item->getPlu() == $discountedItem->getPlu()) {
                     $numItems++;
                     $unitPrice = $item->getPrice();

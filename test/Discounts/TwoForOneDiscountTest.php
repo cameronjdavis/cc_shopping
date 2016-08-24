@@ -66,7 +66,7 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
     public function test_applyDiscount_discountForItemNotInBasket()
     {
         $item1 = new ShoppingItem('PLU 1', '', 1.99);
-        $this->basket->addItem($item1);
+        $this->basket->add($item1);
         
         $total = 123.4;
         $this->items->add(new ShoppingItem('PLU 2', '', 2.99));
@@ -79,7 +79,7 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
     public function test_applyDiscount_onlyOneItemSoNoDiscount()
     {
         $item1 = new ShoppingItem('PLU 1', '', 1.99);
-        $this->basket->addItem($item1);
+        $this->basket->add($item1);
         
         $total = 123.4;
         $this->items->add($item1);
@@ -92,8 +92,8 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
     public function test_applyDiscount_twoItemsSoOneDiscount()
     {
         $item1 = new ShoppingItem('PLU 1', '', 1.99);
-        $this->basket->addItem($item1);
-        $this->basket->addItem($item1);
+        $this->basket->add($item1);
+        $this->basket->add($item1);
         
         $total = 123.4;
         $this->items->add($item1);
@@ -106,12 +106,12 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
     public function test_applyDiscount_differentItemsWachWithDiscount()
     {
         $item1 = new ShoppingItem('PLU 1', '', 1.99);
-        $this->basket->addItem($item1);
-        $this->basket->addItem($item1);
+        $this->basket->add($item1);
+        $this->basket->add($item1);
         
         $item2 = new ShoppingItem('PLU 2', '', 2.76);
-        $this->basket->addItem($item2);
-        $this->basket->addItem($item2);
+        $this->basket->add($item2);
+        $this->basket->add($item2);
         
         $total = 123.4;
         $this->items->add($item1);
