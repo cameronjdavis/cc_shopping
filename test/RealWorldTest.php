@@ -15,7 +15,7 @@ use CodeClanShopping\Discounts\DiscountList;
 
 /**
  * This is not a unit test, rather it demonstrates the classes
- * as they would be used in production.
+ * as they could be used in production.
  */
 class RealWorldTest extends \PHPUnit_Framework_TestCase
 {
