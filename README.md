@@ -22,4 +22,4 @@ Unit tests are in the `test` directory and can be run with `phpunit` or `vendor/
 
 The test file `test/RealWorldTest.php` is an example of how the code could be run in production.
 
-An HTML code coverage report is available in `coverage\index.html`.
+An HTML code coverage report is available in `coverage/index.html`.
