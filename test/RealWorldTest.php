@@ -78,7 +78,7 @@ class RealWorldTest extends \PHPUnit_Framework_TestCase
         $total2 = $thresholdDiscount->applyDiscount($total1);
         $this->assertEquals($total1 * (1 - 0.1), $total2);
         
-        // add a loyalty card discount 0f 2%
+        // add a loyalty card discount of 2%
         $percentageDiscount2 = new PercentageDiscount(0.02);
         $loyaltyDiscount = new LoyaltyDiscount($isLoyal, $percentageDiscount2);
         $total3 = $loyaltyDiscount->applyDiscount($total2);
