@@ -3,7 +3,7 @@
 namespace CodeClanShopping\Discounts;
 
 use CodeClanShopping\Discount;
-use CodeClanShopping\Basket;
+use CodeClanShopping\ShoppingItemCollection;
 use CodeClanShopping\ShoppingItemSet;
 
 /**
@@ -19,16 +19,16 @@ class TwoForOneDiscount implements Discount
     private $items;
 
     /**
-     * Basket the discount will be applied to.
-     * @var Basket
+     * Shopping item collection  the discount will be applied to.
+     * @var ShoppingItemCollection
      */
     private $basket;
 
     /**
      * @param ShoppingItemSet $items Set of shopping items that have two-for-one discounts.
-     * @param Basket $basket Basket of items to search.
+     * @param ShoppingItemCollection $basket Collection of items to search.
      */
-    public function __construct(ShoppingItemSet $items, Basket $basket)
+    public function __construct(ShoppingItemSet $items, ShoppingItemCollection $basket)
     {
         $this->items = $items;
         $this->basket = $basket;
