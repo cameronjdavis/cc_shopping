@@ -21,3 +21,5 @@ The test results can be seen at https://travis-ci.org/cameronjdavis/cc_shopping
 Unit tests are in the `test` directory and can be run with `phpunit` or `vendor/phpunit/phpunit/phpunit`.
 
 The test file `test/RealWorldTest.php` is an example of how the code could be run in production.
+
+An HTML code coverage report is in the `coverage` directory.
