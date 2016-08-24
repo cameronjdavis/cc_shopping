@@ -12,10 +12,10 @@ class TotalPriceCalculator
     /**
      * Calculate the total price for items in a basket
      * without any discounting.
-     * @param \CodeClanShopping\Basket $basket
+     * @param \CodeClanShopping\ShoppingItemCollection $basket
      * @return float
      */
-    public function calculateTotal(Basket $basket)
+    public function calculateTotal(ShoppingItemCollection $basket)
     {
         $total = 0.0;
 

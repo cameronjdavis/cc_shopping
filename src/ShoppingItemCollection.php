@@ -26,6 +26,7 @@ interface ShoppingItemCollection
     public function emptyCollection();
 
     /**
+     * Get the items as an array.
      * @return ShoppingItem[] Aray of items in the collection.
      */
     public function getItems();
