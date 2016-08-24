@@ -4,8 +4,15 @@ namespace CodeClanShopping\Discounts;
 
 use CodeClanShopping\Discount;
 
+/**
+ * A percentage discount.
+ * E.g. Discount total by 15%.
+ */
 class PercentageDiscount implements Discount
 {
+    /**
+     * @var float
+     */
     private $percentage;
 
     /**

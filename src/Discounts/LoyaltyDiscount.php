@@ -4,6 +4,10 @@ namespace CodeClanShopping\Discounts;
 
 use CodeClanShopping\Discount;
 
+/**
+ * A discount that is only applied if the customer is
+ * a loyalty card holder.
+ */
 class LoyaltyDiscount implements Discount
 {
     /**
@@ -18,6 +22,10 @@ class LoyaltyDiscount implements Discount
      */
     private $discount;
 
+    /**
+     * @param boolean $isLoyal True if the customer is loyal.
+     * @param Discount $discount To be applied if customer is loyal.
+     */
     public function __construct($isLoyal, Discount $discount)
     {
         $this->isLoyal = $isLoyal;

@@ -2,6 +2,10 @@
 
 namespace CodeClanShopping;
 
+/**
+ * Calculate the total price for a basket of shopping items
+ * without discounting.
+ */
 class TotalPriceCalculator
 {
 

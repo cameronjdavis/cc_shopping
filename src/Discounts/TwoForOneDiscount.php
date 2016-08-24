@@ -6,6 +6,10 @@ use CodeClanShopping\Discount;
 use CodeClanShopping\Basket;
 use CodeClanShopping\ShoppingItemSet;
 
+/**
+ * This discount searches a basket for items that are offered two-for-one.
+ * If it finds those items, it will calculate and apply the discounted value.
+ */
 class TwoForOneDiscount implements Discount
 {
     /**
@@ -20,6 +24,10 @@ class TwoForOneDiscount implements Discount
      */
     private $basket;
 
+    /**
+     * @param ShoppingItemSet $items Set of shopping items that have two-for-one discounts.
+     * @param Basket $basket Basket of items to search.
+     */
     public function __construct(ShoppingItemSet $items, Basket $basket)
     {
         $this->items = $items;
@@ -62,8 +70,9 @@ class TwoForOneDiscount implements Discount
 
     /**
      * Calculate the dollar value of a two-for-one discount for
-     * an arbitrary number of items given their unit price.
-     * The two-for-one discount value is equal to the number of items,
+     * an arbitrary number of items and given their unit price.
+     * The two-for-one discount value is equal to the number of items
+     * dividied by 2,
      * floored to the next integer down,
      * and multiplied by the unit price.
      * @param integer $numItems Number of items subject to the discount.

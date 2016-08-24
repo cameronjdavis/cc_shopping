@@ -2,6 +2,10 @@
 
 namespace CodeClanShopping;
 
+/**
+ * A class implenting this interface can calculate and
+ * apply a discount to a total price.
+ */
 interface Discount
 {
     /**

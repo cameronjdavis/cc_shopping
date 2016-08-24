@@ -32,7 +32,7 @@ class ShoppingItemSet
     }
 
     /**
-     * Get the unerlying array of items.
+     * Get the underlying array of items.
      * @return ShoppingItem[]
      */
     public function getItems()

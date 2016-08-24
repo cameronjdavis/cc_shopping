@@ -4,6 +4,9 @@ namespace CodeClanShopping\Discounts;
 
 use CodeClanShopping\Discount;
 
+/**
+ * A discount that is applied if the total meets a threshold amount.
+ */
 class TotalThresholdDiscount implements Discount
 {
     /**
@@ -18,6 +21,10 @@ class TotalThresholdDiscount implements Discount
      */
     private $discount;
 
+    /**
+     * @param float $threshold Threshold to be met for discount.
+     * @param Discount $discount To be applied if threshold is met.
+     */
     public function __construct($threshold, Discount $discount)
     {
         $this->threshold = $threshold;
@@ -25,6 +32,7 @@ class TotalThresholdDiscount implements Discount
     }
 
     /**
+     * Apply the discount if $total meets the threshold.
      * @param float $total Total price before discounting.
      * @return float Optionally discounted total price.
      */

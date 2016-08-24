@@ -3,7 +3,7 @@
 namespace CodeClanShopping;
 
 /**
- * This class is the central authority for rounding prices.
+ * The central authority for rounding prices.
  * Prices are rounded (read truncated) in the customer's favour.
  */
 class Rounding

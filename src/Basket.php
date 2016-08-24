@@ -2,8 +2,14 @@
 
 namespace CodeClanShopping;
 
+/**
+ * A customer's basket of shopping items.
+ */
 class Basket
 {
+    /**
+     * @var ShoppingItem[]
+     */
     private $items;
 
     public function __construct()
@@ -60,7 +66,7 @@ class Basket
     }
 
     /**
-     * Get the collection of shopping items.
+     * Get the array of shopping items.
      * @return ShoppingItem[]
      */
     public function getContents()
