@@ -27,7 +27,7 @@ class RealWorldTest extends \PHPUnit_Framework_TestCase
         // create a new basket
         $basket = new Basket();
 
-        // put some items in the basket
+        // create some items for purchasing
         $item1 = new ShoppingItem('PLU 1', 'Name 1', 1.09);
         $item2 = new ShoppingItem('PLU 2', 'Name 2', 2.77);
         $item3 = new ShoppingItem('PLU 3', 'Name 3', 3.12);
