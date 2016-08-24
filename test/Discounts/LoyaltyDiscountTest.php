@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeClanShopping\Test;
+namespace CodeClanShopping\Test\Discounts;
 
 use CodeClanShopping\Discounts\LoyaltyDiscount as Subject;
 use CodeClanShopping\Discount;
