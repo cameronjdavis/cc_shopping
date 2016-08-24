@@ -36,4 +36,31 @@ class ShoppingItemSetTest extends \PHPUnit_Framework_TestCase
 
         $this->assertCount(1, $this->subject->getItems());
     }
+    
+    public function test_remove_nonExistentItem()
+    {
+        $item = new ShoppingItem('', '', 1.99);
+
+        $this->subject->remove($item);
+    }
+    
+    public function test_remove_removesItem()
+    {
+        $item = new ShoppingItem('', '', 1.99);
+        $this->subject->add($item);
+
+        $this->subject->remove($item);
+        
+        $this->assertCount(0, $this->subject->getItems());
+    }
+    
+    public function test_emptyCollection_emptiesCollection()
+    {
+        $item = new ShoppingItem('', '', 1.99);
+        $this->subject->add($item);
+
+        $this->subject->emptyCollection();
+        
+        $this->assertCount(0, $this->subject->getItems());
+    }
 }

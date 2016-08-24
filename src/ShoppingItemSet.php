@@ -5,7 +5,7 @@ namespace CodeClanShopping;
 /**
  * A collection of shopping items that does not allow duplicates.
  */
-class ShoppingItemSet
+class ShoppingItemSet implements ShoppingItemCollection
 {
     /**
      * @var ShoppingItem[]
@@ -40,5 +40,22 @@ class ShoppingItemSet
         return $this->items;
     }
 
-    // @todo: add remove() and empty() methods, which aren't needed for this project
+    /**
+     * Empty this set of items.
+     */
+    public function emptyCollection()
+    {
+        $this->items = [];
+    }
+
+    /**
+     * Remove the item from this set.
+     * @param \CodeClanShopping\ShoppingItem $item
+     */
+    public function remove(ShoppingItem $item)
+    {
+        // unset the item if it exists
+        unset($this->items[$item->getPlu()]);
+    }
+
 }
