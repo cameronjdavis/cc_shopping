@@ -28,6 +28,7 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
     {
         $this->basket = new Basket();
         $this->items = new ShoppingItemSet();
+        $this->subject = new Subject($this->items, $this->basket);
     }
 
     public function calculateDiscount()
@@ -48,8 +49,6 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function test_calculateDiscount($numItems, $unitPrice, $expected)
     {
-        $this->subject = new Subject($this->items, $this->basket);
-
         $actual = $this->subject->calculateDiscount($numItems, $unitPrice);
 
         $this->assertSame($expected, $actual);
@@ -58,7 +57,6 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
     public function test_applyDiscount_noDiscounts()
     {
         $total = 123.4;
-        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -72,7 +70,6 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         
         $total = 123.4;
         $this->items->add(new ShoppingItem('PLU 2', '', 2.99));
-        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -86,7 +83,6 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         
         $total = 123.4;
         $this->items->add($item1);
-        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -101,7 +97,6 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         
         $total = 123.4;
         $this->items->add($item1);
-        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -121,7 +116,6 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         $total = 123.4;
         $this->items->add($item1);
         $this->items->add($item2);
-        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
