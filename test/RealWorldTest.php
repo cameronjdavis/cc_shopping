@@ -10,6 +10,7 @@ use CodeClanShopping\Discounts\LoyaltyDiscount;
 use CodeClanShopping\Discounts\TotalThresholdDiscount;
 use CodeClanShopping\Rounding;
 use CodeClanShopping\Discounts\TwoForOneDiscount;
+use CodeClanShopping\ShoppingItemSet;
 
 /**
  * This is not a unit test, rather it demonstrates the classes
@@ -65,7 +66,9 @@ class RealWorldTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(39.30, $total);
         
         // add a two-for-one discount which is first in line
-        $twoForOneDiscount = new TwoForOneDiscount(['PLU 3'], $basket);
+        $discountedItems = new ShoppingItemSet();
+        $discountedItems->add($item3);
+        $twoForOneDiscount = new TwoForOneDiscount($discountedItems, $basket);
         $total1 = $twoForOneDiscount->applyDiscount($total);
         $this->assertEquals($total - 3.12, $total1);
         

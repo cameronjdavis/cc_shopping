@@ -4,14 +4,15 @@ namespace CodeClanShopping\Discounts;
 
 use CodeClanShopping\Discount;
 use CodeClanShopping\Basket;
+use CodeClanShopping\ShoppingItemSet;
 
 class TwoForOneDiscount implements Discount
 {
     /**
-     * List of PLUs that are being sold as two-for-one.
-     * @var string[]
+     * Set of shopping items that have two-for-one discounts.
+     * @var ShoppingItemSet
      */
-    private $pluList;
+    private $items;
 
     /**
      * Basket the discount will be applied to.
@@ -19,9 +20,9 @@ class TwoForOneDiscount implements Discount
      */
     private $basket;
 
-    public function __construct($pluList, Basket $basket)
+    public function __construct(ShoppingItemSet $items, Basket $basket)
     {
-        $this->pluList = $pluList;
+        $this->items = $items;
         $this->basket = $basket;
     }
 
@@ -35,13 +36,13 @@ class TwoForOneDiscount implements Discount
     public function applyDiscount($total)
     {
         // for each PLU that has a two-for-one offer
-        foreach ($this->pluList as $plu) {
+        foreach ($this->items->getItems() as $discountedItem) {
             $numItems = 0;
             $unitPrice = null;
 
             // count the items in the basket with this PLU
             foreach ($this->basket->getContents() as $item) {
-                if ($item->getPlu() == $plu) {
+                if ($item->getPlu() == $discountedItem->getPlu()) {
                     $numItems++;
                     $unitPrice = $item->getPrice();
                 }

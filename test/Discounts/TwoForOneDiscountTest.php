@@ -5,6 +5,7 @@ namespace CodeClanShopping\Test;
 use CodeClanShopping\Discounts\TwoForOneDiscount as Subject;
 use CodeClanShopping\Basket;
 use CodeClanShopping\ShoppingItem;
+use CodeClanShopping\ShoppingItemSet;
 
 class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,10 +18,16 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
      * @var Basket
      */
     private $basket;
+    
+    /**
+     * @var ShoppingItemSet
+     */
+    private $items;
 
     protected function setUp()
     {
         $this->basket = new Basket();
+        $this->items = new ShoppingItemSet();
     }
 
     public function calculateDiscount()
@@ -41,7 +48,7 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function test_calculateDiscount($numItems, $unitPrice, $expected)
     {
-        $this->subject = new Subject([], $this->basket);
+        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->calculateDiscount($numItems, $unitPrice);
 
@@ -51,7 +58,7 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
     public function test_applyDiscount_noDiscounts()
     {
         $total = 123.4;
-        $this->subject = new Subject([], $this->basket);
+        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -64,7 +71,8 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         $this->basket->addItem($item1);
         
         $total = 123.4;
-        $this->subject = new Subject(['PLU 2'], $this->basket);
+        $this->items->add(new ShoppingItem('PLU 2', '', 2.99));
+        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -77,7 +85,8 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         $this->basket->addItem($item1);
         
         $total = 123.4;
-        $this->subject = new Subject(['PLU 1'], $this->basket);
+        $this->items->add($item1);
+        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -91,7 +100,8 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         $this->basket->addItem($item1);
         
         $total = 123.4;
-        $this->subject = new Subject(['PLU 1'], $this->basket);
+        $this->items->add($item1);
+        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
@@ -109,7 +119,9 @@ class TwoForOneDiscountTest extends \PHPUnit_Framework_TestCase
         $this->basket->addItem($item2);
         
         $total = 123.4;
-        $this->subject = new Subject(['PLU 1', 'PLU 2'], $this->basket);
+        $this->items->add($item1);
+        $this->items->add($item2);
+        $this->subject = new Subject($this->items, $this->basket);
 
         $actual = $this->subject->applyDiscount($total);
 
