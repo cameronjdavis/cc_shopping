@@ -1,6 +1,8 @@
 # Cameron Davis CC Shopping
 
+<a href="https://travis-ci.org/cameronjdavis/cc_shopping">
 <img src="https://travis-ci.org/cameronjdavis/cc_shopping.svg?branch=master">
+</a>
 
 This is Cameron's implementation of the CC coding challenge.
 
