@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Code Coverage for D:\cc_shopping\src/ShoppingItemSet.php</title>
+  <title>Code Coverage for D:\cc_shopping\src/TruncationRounding.php</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -18,7 +18,7 @@
      <div class="col-md-12">
       <ol class="breadcrumb">
         <li><a href="index.html">D:\cc_shopping\src</a></li>
-        <li class="active">ShoppingItemSet.php</li>
+        <li class="active">TruncationRounding.php</li>
 
       </ol>
      </div>
@@ -66,11 +66,11 @@
        </div>
 </td>
       <td class="success small"><div align="right">100.00%</div></td>
-      <td class="success small"><div align="right">3&nbsp;/&nbsp;3</div></td>
+      <td class="success small"><div align="right">1&nbsp;/&nbsp;1</div></td>
      </tr>
 
      <tr>
-      <td class="success">ShoppingItemSet</td>
+      <td class="success">TruncationRounding</td>
       <td class="success big">       <div class="progress">
          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" style="width: 100.00%">
            <span class="sr-only">100.00% covered (success)</span>
@@ -87,7 +87,7 @@
 </td>
       <td class="success small"><div align="right">100.00%</div></td>
       <td class="success small"><div align="right">1&nbsp;/&nbsp;1</div></td>
-      <td class="success small">2</td>
+      <td class="success small">1</td>
       <td class="success big">       <div class="progress">
          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" style="width: 100.00%">
            <span class="sr-only">100.00% covered (success)</span>
@@ -95,11 +95,11 @@
        </div>
 </td>
       <td class="success small"><div align="right">100.00%</div></td>
-      <td class="success small"><div align="right">3&nbsp;/&nbsp;3</div></td>
+      <td class="success small"><div align="right">1&nbsp;/&nbsp;1</div></td>
      </tr>
 
      <tr>
-      <td class="success" colspan="4">&nbsp;<a href="#15"><abbr title="add(ShoppingItem $item)">add</abbr></a></td>
+      <td class="success" colspan="4">&nbsp;<a href="#17"><abbr title="roundPrice($price)">roundPrice</abbr></a></td>
       <td class="success big">       <div class="progress">
          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" style="width: 100.00%">
            <span class="sr-only">100.00% covered (success)</span>
@@ -108,7 +108,7 @@
 </td>
       <td class="success small"><div align="right">100.00%</div></td>
       <td class="success small"><div align="right">1&nbsp;/&nbsp;1</div></td>
-      <td class="success small">2</td>
+      <td class="success small">1</td>
       <td class="success big">       <div class="progress">
          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" style="width: 100.00%">
            <span class="sr-only">100.00% covered (success)</span>
@@ -116,7 +116,7 @@
        </div>
 </td>
       <td class="success small"><div align="right">100.00%</div></td>
-      <td class="success small"><div align="right">3&nbsp;/&nbsp;3</div></td>
+      <td class="success small"><div align="right">1&nbsp;/&nbsp;1</div></td>
      </tr>
 
 
@@ -129,25 +129,22 @@
      <tr><td><div align="right"><a name="3"></a><a href="#3">3</a></div></td><td class="codeLine"><span class="keyword">namespace</span><span class="default">&nbsp;</span><span class="default">CodeClanShopping</span><span class="keyword">;</span></td></tr>
      <tr><td><div align="right"><a name="4"></a><a href="#4">4</a></div></td><td class="codeLine"></td></tr>
      <tr><td><div align="right"><a name="5"></a><a href="#5">5</a></div></td><td class="codeLine"><span class="comment">/**</span></td></tr>
-     <tr><td><div align="right"><a name="6"></a><a href="#6">6</a></div></td><td class="codeLine"><span class="comment">&nbsp;*&nbsp;A&nbsp;collection&nbsp;of&nbsp;shopping&nbsp;items&nbsp;that&nbsp;does&nbsp;not&nbsp;allow&nbsp;duplicates.</span></td></tr>
+     <tr><td><div align="right"><a name="6"></a><a href="#6">6</a></div></td><td class="codeLine"><span class="comment">&nbsp;*&nbsp;Rounds&nbsp;(read&nbsp;truncate)&nbsp;prices&nbsp;in&nbsp;the&nbsp;customer's&nbsp;favour.</span></td></tr>
      <tr><td><div align="right"><a name="7"></a><a href="#7">7</a></div></td><td class="codeLine"><span class="comment">&nbsp;*/</span></td></tr>
-     <tr><td><div align="right"><a name="8"></a><a href="#8">8</a></div></td><td class="codeLine"><span class="keyword">class</span><span class="default">&nbsp;</span><span class="default">ShoppingItemSet</span><span class="default">&nbsp;</span><span class="keyword">extends</span><span class="default">&nbsp;</span><span class="default">ShoppingItemList</span></td></tr>
+     <tr><td><div align="right"><a name="8"></a><a href="#8">8</a></div></td><td class="codeLine"><span class="keyword">class</span><span class="default">&nbsp;</span><span class="default">TruncationRounding</span><span class="default">&nbsp;</span><span class="keyword">implements</span><span class="default">&nbsp;</span><span class="default">Rounding</span></td></tr>
      <tr><td><div align="right"><a name="9"></a><a href="#9">9</a></div></td><td class="codeLine"><span class="keyword">{</span></td></tr>
      <tr><td><div align="right"><a name="10"></a><a href="#10">10</a></div></td><td class="codeLine"></td></tr>
      <tr><td><div align="right"><a name="11"></a><a href="#11">11</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/**</span></td></tr>
-     <tr><td><div align="right"><a name="12"></a><a href="#12">12</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Add&nbsp;an&nbsp;item&nbsp;to&nbsp;the&nbsp;set.</span></td></tr>
-     <tr><td><div align="right"><a name="13"></a><a href="#13">13</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;\CodeClanShopping\ShoppingItem&nbsp;$item</span></td></tr>
-     <tr><td><div align="right"><a name="14"></a><a href="#14">14</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
-     <tr><td><div align="right"><a name="15"></a><a href="#15">15</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">add</span><span class="keyword">(</span><span class="default">ShoppingItem</span><span class="default">&nbsp;</span><span class="default">$item</span><span class="keyword">)</span></td></tr>
-     <tr><td><div align="right"><a name="16"></a><a href="#16">16</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr><td><div align="right"><a name="17"></a><a href="#17">17</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//&nbsp;if&nbsp;the&nbsp;item&nbsp;is&nbsp;already&nbsp;in&nbsp;the&nbsp;set,&nbsp;do&nbsp;not&nbsp;re-add</span></td></tr>
-     <tr class="covered-by-large-tests popin" data-title="7 tests cover line 18" data-content="&lt;ul&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_discountForItemNotInBasket&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_onlyOneItemSoNoDiscount&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_twoItemsSoOneDiscount&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_differentItemsWachWithDiscount&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\RealWorldTest::test_discountList&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\RealWorldTest::test_filledBasket&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\ShoppingItemSetTest::test_add_noDuplicates&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="18"></a><a href="#18">18</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">if</span><span class="default">&nbsp;</span><span class="keyword">(</span><span class="default">array_search</span><span class="keyword">(</span><span class="default">$item</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">getItems</span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">)</span><span class="default">&nbsp;</span><span class="default">!==</span><span class="default">&nbsp;</span><span class="default">false</span><span class="keyword">)</span><span class="default">&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr class="covered-by-large-tests popin" data-title="1 test covers line 19" data-content="&lt;ul&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\ShoppingItemSetTest::test_add_noDuplicates&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="19"></a><a href="#19">19</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="keyword">;</span></td></tr>
-     <tr><td><div align="right"><a name="20"></a><a href="#20">20</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="21"></a><a href="#21">21</a></div></td><td class="codeLine"></td></tr>
-     <tr class="covered-by-large-tests popin" data-title="7 tests cover line 22" data-content="&lt;ul&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_discountForItemNotInBasket&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_onlyOneItemSoNoDiscount&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_twoItemsSoOneDiscount&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\Discounts\TwoForOneDiscountTest::test_applyDiscount_differentItemsWachWithDiscount&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\RealWorldTest::test_discountList&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\RealWorldTest::test_filledBasket&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\ShoppingItemSetTest::test_add_noDuplicates&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="22"></a><a href="#22">22</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">parent</span><span class="default">::</span><span class="default">add</span><span class="keyword">(</span><span class="default">$item</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr><td><div align="right"><a name="23"></a><a href="#23">23</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="24"></a><a href="#24">24</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
+     <tr><td><div align="right"><a name="12"></a><a href="#12">12</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Round&nbsp;a&nbsp;price&nbsp;to&nbsp;two&nbsp;decimal&nbsp;places.</span></td></tr>
+     <tr><td><div align="right"><a name="13"></a><a href="#13">13</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;It's&nbsp;not&nbsp;true&nbsp;rounding,&nbsp;it's&nbsp;truncating&nbsp;in&nbsp;the&nbsp;customer's&nbsp;favour.</span></td></tr>
+     <tr><td><div align="right"><a name="14"></a><a href="#14">14</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;float&nbsp;$price</span></td></tr>
+     <tr><td><div align="right"><a name="15"></a><a href="#15">15</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;float</span></td></tr>
+     <tr><td><div align="right"><a name="16"></a><a href="#16">16</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
+     <tr><td><div align="right"><a name="17"></a><a href="#17">17</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">roundPrice</span><span class="keyword">(</span><span class="default">$price</span><span class="keyword">)</span></td></tr>
+     <tr><td><div align="right"><a name="18"></a><a href="#18">18</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
+     <tr class="covered-by-large-tests popin" data-title="8 tests cover line 19" data-content="&lt;ul&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\RealWorldTest::test_discountList&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\RealWorldTest::test_filledBasket&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\TruncationRoundingTest::test_roundPrice with data set #0&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\TruncationRoundingTest::test_roundPrice with data set #1&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\TruncationRoundingTest::test_roundPrice with data set #2&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\TruncationRoundingTest::test_roundPrice with data set #3&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\TruncationRoundingTest::test_roundPrice with data set #4&lt;/li&gt;&lt;li class=&quot;covered-by-large-tests&quot;&gt;CodeClanShopping\Test\TruncationRoundingTest::test_roundPrice with data set #5&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="19"></a><a href="#19">19</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">floor</span><span class="keyword">(</span><span class="default">$price</span><span class="default">&nbsp;</span><span class="keyword">*</span><span class="default">&nbsp;</span><span class="default">100</span><span class="keyword">)</span><span class="default">&nbsp;</span><span class="keyword">/</span><span class="default">&nbsp;</span><span class="default">100</span><span class="keyword">;</span></td></tr>
+     <tr class="warning"><td><div align="right"><a name="20"></a><a href="#20">20</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
+     <tr><td><div align="right"><a name="21"></a><a href="#21">21</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
 
     </tbody>
    </table>
